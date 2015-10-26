@@ -1,0 +1,45 @@
+package thesearethings;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AllCollectionPage {
+	
+	By mainIcon = By.xpath("html/body/header/div/div/div[1]/div/a");
+	By header = By.xpath("html/body/header");
+	By NavegationBar = By.id("AccessibleNav");
+	By firstImage = By.xpath("html/body/main/div/div/div[1]/div/a/div/div/div");
+	
+	By lastImage = By.xpath("html/body/main/div/div/div[50]/div/a/div/div/div");
+	WebDriver driver;
+			
+	public AllCollectionPage(WebDriver driver){
+		this.driver = driver;
+		
+	}
+	
+	public void MouseOverMainicon(){
+		Actions action = new Actions(driver);
+		WebElement we2 = driver.findElement(mainIcon);
+		WebElement we1 = driver.findElement(header);
+		action.moveToElement(we1).moveToElement(we2).build().perform();
+		
+	}
+	
+	public void HeaderDisplayed(){
+		driver.findElement(NavegationBar).isDisplayed();
+	}
+	
+	public void ScrollPage(){
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("scroll(0, 3550)"); 
+		WebElement we3 = driver.findElement(lastImage);
+		WebDriverWait wait = new WebDriverWait(driver,15);
+		wait.until(ExpectedConditions.visibilityOf(we3));
+	}
+}

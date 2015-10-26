@@ -1,0 +1,33 @@
+package thesearethings;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class AllCollectionPage {
+	
+	//By mainIcon = By.xpath("html/body/header/div/div/div[1]/div/a");
+	By mainIcon = By.className("h1 site-header__logo large--left");
+	By header = By.xpath("html/body/header");
+	By NavegationBar = By.id("AccessibleNav");
+	By firstImage = By.xpath("html/body/main/div/div/div[1]/div/a/div/div/div");
+	
+	By lastImage = By.xpath("html/body/main/div/div/div[50]/div/a/div/div/div");
+	WebDriver driver;
+	Actions action;
+	
+	public AllCollectionPage(WebDriver driver){
+		this.driver = driver;
+	}
+	
+	public void MouseOverMainicon(){
+	Actions action = new Actions(driver);
+	WebElement we2 = driver.findElement(mainIcon);
+	WebElement we1 = driver.findElement(header);
+	action.moveToElement(we1).moveToElement(we2).click().build().perform();
+	
+	}
+	
+	//public void 
+}

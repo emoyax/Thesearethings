@@ -1,0 +1,40 @@
+package thesearethings;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class TestCase {
+	WebDriver driver;
+	AllCollectionPage allp;
+	
+	@Before
+	public void setup(){
+		//DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+		System.setProperty("webdriver.ie.driver","C:\\SELENIUM\\IEDriverServer.exe");
+		WebDriver driver = new InternetExplorerDriver();
+		driver.get("http://www.thesearethings.com/");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		Actions action = new Actions(driver);
+	}
+	
+	@After
+	public void tearDown(){
+		driver.quit();
+	}
+	
+	@Test
+	public void testCase(){
+		allp = new AllCollectionPage(driver);
+		allp.MouseOverMainicon();
+	}
+	
+
+}
