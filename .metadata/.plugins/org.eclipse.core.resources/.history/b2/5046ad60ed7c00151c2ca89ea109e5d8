@@ -1,0 +1,42 @@
+package thesearethings;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AddToCartPage {
+	WebDriver driver;
+	By firstImage = By.xpath("html/body/main/div/div/div[1]");
+	By addButton = By.id("AddToCart");
+	By checkoutButton = By.name("checkout");
+	
+	public AddToCartPage(WebDriver driver){
+		this.driver = driver;
+	}
+	
+	public void openDetail(){
+		driver.findElement(firstImage).click();
+	}
+	
+	public void clickAddB(){
+		driver.findElement(addButton).click();
+	}
+	
+	public void clickCheckOutB(){
+		driver.findElement(checkoutButton).click();
+	}
+	
+	public void AddItem(){
+		this.openDetail();
+		this.clickAddB();
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.alertIsPresent());
+		Alert alert = driver.switchTo().alert();
+		
+		this.clickCheckOutB();
+		
+	}
+
+}
