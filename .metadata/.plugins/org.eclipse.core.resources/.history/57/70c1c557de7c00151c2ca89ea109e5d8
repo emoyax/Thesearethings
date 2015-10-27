@@ -33,6 +33,7 @@ public class TestCase2 {
 	public void TestSubscribe(){
 		jc = new JoinTheClub(driver);
 		jc.Subscribe("emoya@xperius.net");
+		
 	}
 
 }

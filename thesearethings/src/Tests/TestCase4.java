@@ -9,10 +9,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import thesearethings.JoinTheClub;
+import thesearethings.ThingDetail;
 
-public class TestCase2 {
+public class TestCase4 {
+
 	WebDriver driver;
-	JoinTheClub jc;
+	ThingDetail td;
 	
 	@Before
 	public void setup(){
@@ -31,8 +33,8 @@ public class TestCase2 {
 	
 	@Test
 	public void TestSubscribe(){
-		jc = new JoinTheClub(driver);
-		jc.Subscribe("emoya@xperius.net");
+		td = new ThingDetail(driver);
+		td.CheckPage();
 	}
 
 }

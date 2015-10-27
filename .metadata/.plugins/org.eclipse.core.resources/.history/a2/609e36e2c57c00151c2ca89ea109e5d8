@@ -1,0 +1,14 @@
+package thesearethings;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class ThingDetail {
+	WebDriver driver;
+	By firstImage = By.xpath("html/body/main/div/div/div[1]/div/a/div/div/div");
+	
+	public ThingDetail(WebDriver driver){
+		this.driver = driver;
+	}
+
+}
