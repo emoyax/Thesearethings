@@ -8,13 +8,13 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import thesearethings.JoinTheClub;
+import thesearethings.AddToCartPage;
 import thesearethings.ThingDetail;
 
-public class TestCase4 {
-
+public class TestCase5 {
+	
 	WebDriver driver;
-	ThingDetail td;
+	AddToCartPage acp;
 	
 	@Before
 	public void setup(){
@@ -32,9 +32,8 @@ public class TestCase4 {
 	}
 	
 	@Test
-	public void TestThingDetail(){
-		td = new ThingDetail(driver);
-		td.CheckPage();
+	public void TestSubscribe(){
+		acp = new AddToCartPage(driver);
+		acp.AddItem();
 	}
-
 }

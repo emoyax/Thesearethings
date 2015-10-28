@@ -8,13 +8,14 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import thesearethings.JoinTheClub;
-import thesearethings.ThingDetail;
+import thesearethings.AddToCartPage;
+import thesearethings.ShoppingThingPage;
+import thesearethings.ThingSoldoutPage;
 
-public class TestCase4 {
+public class TestCase7 {
 
 	WebDriver driver;
-	ThingDetail td;
+	ThingSoldoutPage tso;
 	
 	@Before
 	public void setup(){
@@ -32,9 +33,9 @@ public class TestCase4 {
 	}
 	
 	@Test
-	public void TestThingDetail(){
-		td = new ThingDetail(driver);
-		td.CheckPage();
+	public void TestSubscribe(){
+		tso = new ThingSoldoutPage (driver);
+		tso.selectThing();
+		tso.checkText();
 	}
-
 }

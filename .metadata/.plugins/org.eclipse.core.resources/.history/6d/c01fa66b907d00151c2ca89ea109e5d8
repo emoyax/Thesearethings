@@ -32,7 +32,7 @@ public class TestCase4 {
 	}
 	
 	@Test
-	public void TestThingDetail(){
+	public void TestSubscribe(){
 		td = new ThingDetail(driver);
 		td.CheckPage();
 	}

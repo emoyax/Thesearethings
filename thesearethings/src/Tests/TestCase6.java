@@ -32,7 +32,7 @@ public class TestCase6 {
 	}
 	
 	@Test
-	public void TestSubscribe(){
+	public void TestShoppingThing(){
 		acp = new AddToCartPage(driver);
 		acp.AddItem();
 		stp = new ShoppingThingPage(driver);

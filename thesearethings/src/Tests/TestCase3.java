@@ -31,7 +31,7 @@ public class TestCase3 {
 	}
 	
 	@Test
-	public void TestSubscribe(){
+	public void TestFanFormFilling(){
 		fcp = new FanClubFormPage(driver);
 		fcp.FilltheForm("emoya@xperius.net", "elita", "lastName");
 		

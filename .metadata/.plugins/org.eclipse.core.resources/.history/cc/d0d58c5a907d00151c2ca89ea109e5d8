@@ -8,13 +8,13 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import thesearethings.JoinTheClub;
-import thesearethings.ThingDetail;
+import thesearethings.AddToCartPage;
+import thesearethings.ShoppingThingPage;
 
-public class TestCase4 {
-
+public class TestCase6 {
 	WebDriver driver;
-	ThingDetail td;
+	AddToCartPage acp;
+	ShoppingThingPage stp;
 	
 	@Before
 	public void setup(){
@@ -32,9 +32,10 @@ public class TestCase4 {
 	}
 	
 	@Test
-	public void TestThingDetail(){
-		td = new ThingDetail(driver);
-		td.CheckPage();
+	public void TestSubscribe(){
+		acp = new AddToCartPage(driver);
+		acp.AddItem();
+		stp = new ShoppingThingPage(driver);
+		stp.fillCheckoutForm("emoya@xperius.net", "eli", "ln", "addr", "addc", 1234);
 	}
-
 }

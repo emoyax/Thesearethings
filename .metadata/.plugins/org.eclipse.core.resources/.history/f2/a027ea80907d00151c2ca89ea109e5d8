@@ -8,13 +8,12 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import thesearethings.FanClubFormPage;
 import thesearethings.JoinTheClub;
-import thesearethings.ThingDetail;
 
-public class TestCase4 {
-
+public class TestCase3 {
 	WebDriver driver;
-	ThingDetail td;
+	FanClubFormPage fcp;
 	
 	@Before
 	public void setup(){
@@ -32,9 +31,9 @@ public class TestCase4 {
 	}
 	
 	@Test
-	public void TestThingDetail(){
-		td = new ThingDetail(driver);
-		td.CheckPage();
+	public void TestSubscribe(){
+		fcp = new FanClubFormPage(driver);
+		fcp.FilltheForm("emoya@xperius.net", "elita", "lastName");
+		
 	}
-
 }

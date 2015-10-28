@@ -32,7 +32,7 @@ public class TestCase5 {
 	}
 	
 	@Test
-	public void TestSubscribe(){
+	public void TestAddItem(){
 		acp = new AddToCartPage(driver);
 		acp.AddItem();
 	}
