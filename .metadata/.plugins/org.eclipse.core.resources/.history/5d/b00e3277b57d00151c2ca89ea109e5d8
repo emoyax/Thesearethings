@@ -1,0 +1,45 @@
+package Tests;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import thesearethings.AddToCartPage;
+
+public class TestCase8 {
+	
+	WebDriver driver;
+	AddToCartPage acp;
+	By cartToggle = By.xpath("html/body/header/div/div/div[2]/a");
+	By counter = By.id("CartCount");
+	
+	@Before
+	public void setup(){
+		System.setProperty("webdriver.ie.driver","C:\\SELENIUM\\IEDriverServer.exe");
+		driver = new InternetExplorerDriver();
+		driver.get("http://www.thesearethings.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	@After
+	public void tearDown(){
+		driver.quit();
+		
+	}
+	
+	@Test
+	public void TestCartEmpty(){
+		acp = new AddToCartPage(driver);
+		//String c = driver.findElement(counter).getText();
+		driver.findElement(cartToggle).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		}
+	
+}
