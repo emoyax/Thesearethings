@@ -1,0 +1,27 @@
+package thesearethings;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+public class StockistsSearch {
+	
+	By location = By.id("storemapper-zip");
+	By searchButton = By.id("storemapper-go");
+	WebDriver driver;
+	
+	public StockistsSearch(WebDriver driver){
+		this.driver = driver;
+		
+	}
+	
+	public void Setlocation(String s){
+		driver.findElement(location).sendKeys(s);
+	}
+	
+	public void clickSearchB(){
+		driver.findElement(searchButton).click();
+	}
+	
+	
+}

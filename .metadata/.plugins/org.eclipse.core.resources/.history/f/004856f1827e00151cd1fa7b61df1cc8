@@ -1,0 +1,49 @@
+package Tests;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import thesearethings.AddToCartPage;
+import thesearethings.StockistsSearch;
+
+public class TestCase11 {
+	WebDriver driver;
+	StockistsSearch ss;
+	
+	@Before
+	public void setup(){
+		
+		System.setProperty("webdriver.ie.driver","C:\\SELENIUM\\IEDriverServer.exe");
+		driver = new InternetExplorerDriver();
+		driver.get("http://www.thesearethings.com/");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		
+	}
+	
+	@After
+	public void tearDown(){
+		driver.quit();
+	}
+	
+	@Test
+	public void testSearchValidLocation(){
+		ss = new StockistsSearch(driver);
+		ss.Setlocation("Japan");
+		ss.clickSearchB();
+	}
+	
+	@Test
+	public void testSearchInValidLocation(String s){
+		ss = new StockistsSearch(driver);
+		ss.Setlocation("London");
+		ss.clickSearchB();
+		ss.noResultsMessage(s);
+	}
+
+}
