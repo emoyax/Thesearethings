@@ -14,6 +14,10 @@ public class AddToCartPage {
 	By checkoutButton = By.name("checkout");
 	By Overlay = By.id("AjaxifyCart");
 	
+	By plusButton = By.xpath("html/body/div[3]/div/form/div[2]/div/div[2]/div/div[2]/div/button[2]");
+	By minusButton = By.xpath("html/body/div[3]/div/form/div[2]/div/div[2]/div/div[2]/div/button[1]");
+	By textArea = By.name("note");
+	
 	public AddToCartPage(WebDriver driver){
 		this.driver = driver;
 	}
@@ -38,7 +42,35 @@ public class AddToCartPage {
 		    driver.switchTo().window(winHandle);
 		}
 		this.clickCheckOutB();
+	}
+	
+	public void addThingtoList(){
+		driver.findElement(plusButton).click();
+	}
+	
+	public void removeThingfromList(){
+		driver.findElement(minusButton).click();
+	}
+	
+	public void setMessage(String m){
+		driver.findElement(textArea).click();
+		driver.findElement(textArea).sendKeys(m);
+	}
+	
+	public void AddMoreItemsAndText(String m){
+		this.openDetail();
+		this.clickAddB();
+		String winHandleBefore = driver.getWindowHandle();
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+		this.addThingtoList();
+		WebDriverWait wait = new WebDriverWait(driver,2);
+		wait.until(ExpectedConditions.elementToBeClickable(textArea));
 		
+		this.setMessage(m);
+		this.setMessage(m);
+		this.clickCheckOutB();
 	}
 
 }

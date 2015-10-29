@@ -7,9 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
 import thesearethings.FanClubFormPage;
-import thesearethings.JoinTheClub;
 
 public class TestCase3 {
 	WebDriver driver;
