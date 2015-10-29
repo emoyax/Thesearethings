@@ -33,7 +33,7 @@ public class TestCase9 {
 	}
 	
 	@Test
-	public void testAdditemstoCart(){
+	public void testCase(){
 		atc = new AddToCartPage(driver);
 		atc.AddMoreItemsAndText("this");
 	}

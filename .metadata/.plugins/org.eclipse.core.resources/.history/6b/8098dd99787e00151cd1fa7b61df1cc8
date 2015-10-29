@@ -18,9 +18,6 @@ public class AddToCartPage {
 	By minusButton = By.xpath("html/body/div[3]/div/form/div[2]/div/div[2]/div/div[2]/div/button[1]");
 	By textArea = By.name("note");
 	
-	By cartCount = By.id("CartCount");
-	
-	
 	public AddToCartPage(WebDriver driver){
 		this.driver = driver;
 	}
@@ -74,18 +71,6 @@ public class AddToCartPage {
 		this.setMessage(m);
 		this.setMessage(m);
 		this.clickCheckOutB();
-	}
-	
-	public void RemoveItems(){
-		this.openDetail();
-		this.clickAddB();
-		String winHandleBefore = driver.getWindowHandle();
-		for(String winHandle : driver.getWindowHandles()){
-		    driver.switchTo().window(winHandle);
-		}
-		this.addThingtoList();
-		this.removeThingfromList();
-		driver.close();
 	}
 
 }

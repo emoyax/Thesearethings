@@ -10,8 +10,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import thesearethings.AddToCartPage;
 
-
-public class TestCase9 {
+public class TestCase10 {
 	
 	WebDriver driver;
 	AddToCartPage atc;
@@ -33,9 +32,10 @@ public class TestCase9 {
 	}
 	
 	@Test
-	public void testAdditemstoCart(){
+	public void testRemoveitemsfromCart(){
 		atc = new AddToCartPage(driver);
-		atc.AddMoreItemsAndText("this");
+		atc.RemoveItems();
 	}
 	
+
 }
