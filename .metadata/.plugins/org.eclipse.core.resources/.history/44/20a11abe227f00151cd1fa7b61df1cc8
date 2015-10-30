@@ -9,7 +9,7 @@ public class FooterPage {
 	By About = By.partialLinkText("About");
 	By WholeSale = By.linkText("Wholesale");
 	By Stockists = By.xpath("html/body/footer/div/div/div[1]/p/a[3]");
-	By Contact = By.xpath("html/body/footer/div/div/div[1]/p/a[6]");
+	By Contact = By.xpath("//footer/div/div/div[1]/p/a[5]");
 	
 	WebDriver driver;
 	

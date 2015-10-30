@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestCase11" project="thesearethings" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="Tests.TestCase11" time="101.934">
+    <testcase name="testSearchInValidLocation" classname="Tests.TestCase11" time="59.832"/>
+    <testcase name="testSearchValidLocation" classname="Tests.TestCase11" time="42.102"/>
+  </testsuite>
+</testrun>
