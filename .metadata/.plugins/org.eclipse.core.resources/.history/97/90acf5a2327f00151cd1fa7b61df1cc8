@@ -1,0 +1,47 @@
+package thesearethings;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class ContactUsPage {
+	
+	WebDriver driver;
+	By cfName = By.id("ContactFormName");
+	By cfEmail = By.id("ContactFormEmail");
+	By cfNumber = By.id("ContactFormOrder");
+	By cfMessage = By.id("ContactFormMessage");
+	By cfButton = By.className("btn right");
+	
+	public ContactUsPage(WebDriver driver){
+		this.driver = driver;
+	}
+	
+	public void setcfName(String n){
+		driver.findElement(cfName).sendKeys(n);
+	}
+	
+	public void setcfEmail(String e){
+		driver.findElement(cfEmail).sendKeys(e);
+	}
+	
+	public void setcfNumber(int n){
+		driver.findElement(cfNumber).sendKeys(String.valueOf(n));;
+	}
+	
+	public void setcfMessage(String m){
+		driver.findElement(cfMessage).sendKeys(m);
+	}
+	
+	public void clickcfButton(){
+		driver.findElement(cfButton).click();
+	}
+	
+	public void fillContactForm(String na, String e, int n, String m){
+		this.setcfName(na);
+		this.setcfEmail(e);
+		this.setcfNumber(n);
+		this.setcfMessage(m);
+		this.clickcfButton();
+	}
+
+}
